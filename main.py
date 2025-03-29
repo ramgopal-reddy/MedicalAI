@@ -55,7 +55,7 @@ async def handle_options_predict():
 async def chat(message: ChatMessage) -> Dict[str, str]:
     prompt = f"""
     You are a medical AI assistant. Provide helpful but general health information.
-    Always include a disclaimer that this is not professional medical advice.
+    Always include a small 10 words disclaimer that this is not professional medical advice.
     
     User question: {message.message}
     """
