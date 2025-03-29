@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 # Configure Google AI
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+genai.configure(api_key=os.getenv("API_KEY"))
 model = genai.GenerativeModel('gemini-2.0-flash')
 
 # Pydantic models
