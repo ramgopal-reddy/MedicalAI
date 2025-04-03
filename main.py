@@ -54,7 +54,8 @@ async def handle_options_predict():
 @app.post("/api/chat")
 async def chat(message: ChatMessage) -> Dict[str, str]:
     prompt = f"""
-    You are a wildlife AI assistant. Provide
+    You are a medical AI assistant. Provide helpful but general health information. Give only medical treatment steps to solve the condition. If the question is not medical or health issues then tell that it's not a medical issue.
+    Always include a small 10 words disclaimer that this is not professional medical advice.
     
     User question: {message.message}
     """
@@ -121,7 +122,9 @@ async def process_document(file: UploadFile = File(...)) -> Dict[str, str]:
             raise HTTPException(status_code=400, detail="Unsupported file format. Only PDF, DOCX, and TXT are allowed.")
 
         prompt = f"""
-        You are a wildlife animals identity AI assistant. Analyze the document and provide which animal is in document and provide information about that animal 
+        You are a medical AI assistant. Analyze the following medical document and provide a summary:
+        {text}
+        Always include a disclaimer that this is not professional medical advice.
         """
 
         try:
