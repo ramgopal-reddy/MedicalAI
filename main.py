@@ -54,7 +54,7 @@ async def handle_options_predict():
 @app.post("/api/chat")
 async def chat(message: ChatMessage) -> Dict[str, str]:
     prompt = f"""
-    You are a medical AI assistant. Provide
+    You are a wildlife AI assistant. Provide
     
     User question: {message.message}
     """
