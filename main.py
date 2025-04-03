@@ -122,9 +122,7 @@ async def process_document(file: UploadFile = File(...)) -> Dict[str, str]:
             raise HTTPException(status_code=400, detail="Unsupported file format. Only PDF, DOCX, and TXT are allowed.")
 
         prompt = f"""
-        You are a medical AI assistant. Analyze the following medical document and provide a summary:
-        {text}
-        Always include a disclaimer that this is not professional medical advice.
+        You are a wildlife animals identity AI assistant. Analyze the document and provide which animal is in document and provide information about that animal 
         """
 
         try:
