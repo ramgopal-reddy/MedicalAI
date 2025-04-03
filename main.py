@@ -54,8 +54,7 @@ async def handle_options_predict():
 @app.post("/api/chat")
 async def chat(message: ChatMessage) -> Dict[str, str]:
     prompt = f"""
-    You are a medical AI assistant. Provide helpful but general health information. Give only medical treatment steps to solve the condition. If the question is not medical or health issues then tell that it's not a medical issue.
-    Always include a small 10 words disclaimer that this is not professional medical advice.
+    You are a medical AI assistant. Provide
     
     User question: {message.message}
     """
